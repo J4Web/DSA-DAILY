@@ -179,7 +179,37 @@ void postOrderTraversal(BinaryTreeNode<int>* root)
   if(root->right) postOrderTraversal(root->right);
   cout<<root->data<<" ";
 }
-
+BinaryTreeNode<int>* buildTreeHelper(int* in,int* pre, int inS, int inE,int preS,int preE)
+{
+  if(inS>inE || preS>preE){
+    return nullptr;
+  }
+  int rootData=pre[preS];
+  int rootIdx=-1;
+  for(int i=inS;i<=inE;i++)
+  {
+    if(in[i]==rootData) {
+      rootIdx=i;
+      break;
+    }
+  }
+  int lInS=inS;
+  int lInE=rootIdx-1;
+  int lpreS=preS+1;
+  int lpreE=rootIdx+preS-inS;
+  int rInS=rootIdx+1;
+  int rInE=inE;
+  int rpreS=lpreE+1;
+  int rpreE=preE;
+  BinaryTreeNode<int>* root=new BinaryTreeNode<int>(rootData);
+  root->left=buildTreeHelper(in,pre,lInS,lInE,lpreS,lpreE);
+  root->right=buildTreeHelper(in,pre,rInS,rInE,rpreS,rpreE);
+  return root;
+}
+BinaryTreeNode<int> *buildTree(int* in,int* pre,int size)
+{
+  return buildTreeHelper(in,pre,0,size-1,0,size-1);
+}
 int main()
 {
   // BinaryTreeNode<int> *root=new BinaryTreeNode<int>(89);
@@ -191,23 +221,33 @@ int main()
   // root->right=node2;
   // node1->left=node3;
   // node2->right=node4;
-  BinaryTreeNode<int> *root=takeInputLevelWise();
-  printMyTreeRecursively(root);
-  cout<<"Binary Tree Number of Nodes\n :";
-  cout<<ctNodesInBinaryTree(root)<<e;
-  cout<<"Check if a Node is isNodePresent\n";
-  cout<<isNodePresent(root,90);
-  cout<<"Height of the Binar Tree \n";
-  cout<<htOfBinaryTree(root);
-  // cout<<"Mirror The Binary Tree\n";
-   // root=mirrorBinaryTree(root);
-   // printMyTreeRecursively(root);
-   cout<<"inOrderTraversal of Binary Tree \n";
-   inOrderTraversal(root);
-   cout<<"PreOrder Traversal"<<e;
-   preOrderTraversal(root);
-   cout<<"Post ORDER Traversal\n";
-   postOrderTraversal(root);
+  // BinaryTreeNode<int> *root=takeInputLevelWise();
+  // printMyTreeRecursively(root);
+  // cout<<"Binary Tree Number of Nodes\n :";
+  // cout<<ctNodesInBinaryTree(root)<<e;
+  // cout<<"Check if a Node is isNodePresent\n";
+  // cout<<isNodePresent(root,90);
+  // cout<<"Height of the Binar Tree \n";
+  // cout<<htOfBinaryTree(root);
+  // // cout<<"Mirror The Binary Tree\n";
+  //  // root=mirrorBinaryTree(root);
+  //  // printMyTreeRecursively(root);
+  //  cout<<"inOrderTraversal of Binary Tree \n";
+  //  inOrderTraversal(root);
+  //  cout<<"PreOrder Traversal"<<e;
+  //  preOrderTraversal(root);
+  //  cout<<"Post ORDER Traversal\n";
+  //  postOrderTraversal(root);
+  //  cout<<"Building a tree with the PreOrder and Inorder Given\n";
+  //  cout<<"======================\n";
+  //    levelWisePrintingBinaryTree(root);
+  //    cout<<"=====================\n";
+   int In[]={4,2,5,1,8,6,9,3,7};
+   int pre[]={1,2,4,5,3,6,8,9,7};
+   int size=sizeof(In)/sizeof(In[0]);
+   cout<<size<<e;
+   BinaryTreeNode<int> *root=buildTree(In,pre,size);
+   levelWisePrintingBinaryTree(root);
   return 0;
 }
 
