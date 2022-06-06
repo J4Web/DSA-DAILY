@@ -1,0 +1,36 @@
+class Solution {
+public:
+    int ct=0;
+    int uniquePaths(int m, int n) {
+        vector<string> ans=helper(1,1,m,n);
+        return ans.size();
+    }
+    vector<string> helper(int sr,int sc,int gr,int gc)
+    {
+        if(sr==gr && gc==sr)
+        {
+            vector<string> st;
+            st.push_back("");
+        }
+        vector<string> hpath;
+        vector<string> vpath;
+       if(sc<gc)
+        {
+           hpath=helper(sr,sc+1,gr,gc);
+        }
+        if(sr<gr)
+        {
+            vpath=helper(sr+1,sc,gr,gc);
+        }
+        vector<string> ans;
+        for(auto i:hpath)
+        {
+            ans.push_back("h"+i);
+            
+        }
+        for(auto i:vpath){
+            ans.push_back("v"+1);
+        }
+        return ans;
+    }
+};
