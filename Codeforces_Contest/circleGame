@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+#define int long long 
+#define all(c) c.begin(),c.end()
+using namespace std;
+void begin()
+{
+    //Start your code here
+    int n; cin>>n;
+    vector<int> arr(n);
+    for(auto &i:arr) cin>>i;
+    sort(all(arr));
+    for(auto i:arr)
+    {
+        if(i==1) break;
+        if(i>1)
+        {
+            cout<<"YES\n";
+            return ;
+        }
+    }
+    for(int i=0;i<n-1;i++)
+    {
+        if(arr[i+1]-arr[i]==1)
+        {
+            cout<<"NO\n";
+            return ;
+        }
+    }
+    cout<<"YES";
+    cout<<"\n";
+}
+int32_t main()
+{
+    int t=1;
+    cin>>t;
+    while(t--)
+    {
+        begin();
+    }
+    return 0;
+}
+
