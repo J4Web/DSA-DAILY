@@ -1,0 +1,217 @@
+1)Greedy choice
+2)Optimal
+
+i.e every sub smaller problem youre 
+using the greedy choice .
+
+
+diff b/w pruing and greedy
+
+eg n*x chess board
+
+give me one sol such that 
+to place n queens so that 
+no one attack each other
+ 
+
+
+we have one sol 
+n!
+we will try we will choose every posi and see which isnt
+possible 
+
+but with greedy we can try by saying we will place
+the queens at knight positions and see how it would
+ turn out and it might turn out that youre able to 
+ build the board so youre not seeing all
+ possible approach you have one particular approach
+  and you try
+ 
+ so like base on one state you know what to take and
+ based on another state you know what to take
+ so its state depedent 
+ like this state would have that greedy choice 
+ and that particular state it would that greedy choice
+ 
+ 
+ Practice based algo cant get it staraight away
+ 
+ there are some known greedy techinques 
+ like we did a idea of exhange arguments if we
+ didn know that techinque we wouldnt of known 
+ what condi we would sort tho right ?
+ 
+ this this this greedy choice
+
+
+
+chess board 
+lets say we have some rooks on the board 
+rook - attacks in its row and its col each rook
+take hold of some row and some col
+
+find out the largest rect area on the board which is unattacked
+
+let there are k num of rooks given on chess
+board with their coordinates
+f/o the largest caontinous 
+area of rect that u see unattacked
+
+in greedy one concept is very imp is
+"TAKE OUT THE INDEPENDENCE"
+
+SO CONCECUTIVE Y'S DEFINES THE = WIDTH =Wi
+AND CONSECUTIVE X'S DEFINES THE = HEIGHT= Hi
+
+if there are N distinct ys and M distinct x's
+we get how many distinct reactangles ?
+
+how many bounded rect we can build ?
+
+y2- y1 = w1
+
+y3-y2= x2
+
+y4-y3=w3 . .... . ... yn-yn-1= wn-1
+xi-xi-1 -1
+
+similarly we'll get 
+m-1 = for height
+
+
+
+=========================================
+
+
+#include<bits/stdc++.h>
+#define int long long 
+using namespace std;
+//ds gives you min , max, no. of distinct values
+//gives you freq of the elem which just greater than x
+//F/o ele <= x and its freq
+struct bag
+{
+    int sumVal;
+    int minVal;
+    int maxVal;
+    map<int,int> mp;
+    //if its more than 10 ki power 9 we need to use long long
+    bag()
+    {
+        sumVal=0;
+        minVal=INT_MAX;
+        maxVal=INT_MIN;
+        mp.clear();
+    }
+    void insert(int x)
+    {
+        minVal=min(x,minVal);
+        maxVal=max(x,maxVal);
+        mp[x]++;
+        sumVal+=x;
+    }
+    void removeEle(int x)
+    {
+        if(mp.find(x)==mp.end())
+        {
+            //find searches in the map
+            cout<<"Ele not present"<<"\n";
+            return;
+        }
+        else{
+            mp[x]--;
+            if(mp[x]==0)
+            {
+                mp.erase(x);
+                sumVal-=x;
+            }
+        }
+    }
+    int getMin()
+    {
+        if(mp.empty()) return -1;
+        else return minVal;
+        // OR return mp.begin()->first;
+    }
+    int getMax()
+    {
+        return maxVal;
+        //OR return mp.rbegin()->first
+        //OR auto it=mp.end();
+        //it--;
+        // return it->first;
+
+    }
+    int distinctVal()
+    {
+        return mp.size();
+    }
+    int getFreqOfNextGreater(int x)
+    {
+        auto it = mp.lower_bound(x);
+        if(it==mp.end())
+        {
+            return 0;
+        }
+        else return  it->second;
+    }
+    
+};
+void begin(){
+    //Write your code here
+    vector<int> a={1,2,4,4,4,5,6};
+    auto it1=upper_bound(a.begin(),a.end(),4);
+    cout<<it1-a.begin()<<"\n";
+
+    //Uppper - pts to the value which is the first valuy which is greater than x
+    //lower -pts to the value which is the first value greater than or equal to x;
+    //so from lower bound you get 1st pos of an elem and by doing upper bound-1 you get the last positon
+    //doing Upper_bound - a.begin we get the num of elem
+    //doing same with lower bound we get num of elems
+
+    //PREFIX ARRAYS 
+
+//************************************************************************//
+
+    // DOING THE Uppper_B - A.BEGIN GIVE U NUMS LESS THAN EQ TO X 
+
+    // DOING THE LOWER_B - A.BEGIN GIVES U NUMS LESS THAN X
+
+    // *(mp.begin()).first
+    // *(mp.end()).first
+
+    // mp.begin()->first;
+    // mp.end()->first; (NOPE CANT DO THAT THERE)
+    // end pooint to the last value of the mp +1  
+
+// BUT YOU CAN DO *(mp.end()-1).first also works!!
+// also rbegin() is the end of the map and rend() at the begin+1 
+// LIKE THOSE ARE EXACT OPPOSIT TO THE OG BEGIN AND END
+
+// when you have to rm the elem from the map 
+// you can do mp[i]--
+// but would that be enough ? NOPE
+// we also have to earse it off the 
+// bc when u query it you might  find the 5 : 0
+// which shouldnt be present!
+    // map takes -- > logn
+    //no of distrinct element ? we give mp.size()
+    
+    return;
+}
+int32_t main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie();
+    cout.tie();
+    int t=1;
+    // cin>>t;
+    while(t--)
+    {
+        begin();
+    }
+    return 0;
+}
+
+
+ 
