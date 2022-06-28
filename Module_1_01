@@ -78,11 +78,81 @@ xi-xi-1 -1
 similarly we'll get 
 m-1 = for height
 
+so for width we can get = wi- wi-1 -1
+and for height we write = xi-xi-1 -1
+
+so no. of rectangle ? every weight will
+combine with every height possible
+
+so M-1 * N-1
+and give some rect with max area 
+we can say 
+max(h,w)
+so we can write 
+max(h) and max(w) if h and wt independent
+
+so find max of width
+and find max of height in this array 
+
+
+cus for every height in space width is same and for every weight 
+
 
 
 =========================================
+max ht and max of wt
+idea : just craete a vec contains  which all rows has row 
+and create a vec which contains which all cols have rows
+sort them individually  take the diff between the consecutive points and take the max out of them
+
+take the diff between each two max consecutive difference points of y coordinates or the cols 
+and max x coordinates consecutive diff or row
+just mulitiply them.
+===================================================================================
+
+Q)
+lets say there N person their coordinates are given to you!
+op -> move 1 person by 1 unit out of any 4 direction
+min no of moves needed to make them move at a single point!
+
+IN THESE 2D KIND OF PROB THINK OF WHAT HAPPENS IN 1D APPROACH FIRST 
+like in this case think of youre in  1D array and you have some ppl on it tell me the min moves to make everyone meet!
+
+let N x1 x2 x3 x4 x5 
+
+so let say they meet at X
+
+so we can say 
+
+what we want 
+now the ques becomes f/o X such that this exp is min
+min(X-x1+ X-x2+ X-x3 + X-x4----- +  X-xn)
+
+******WHENEVER YOU HAVE TO MINIMISE THIS KIND OF EXP JUST TAKE THE MEDIAN 
+
+SO WHEN YOU HAVE A PT IN SPACE LIKE (Ax-Bx + Ay- By ) we get Manhattan distance**
+and in this case if its asked find the min distance between those two points 
+say thats the medium of them would give
+
+Eulidean distance like (Ax- Bx)^2 + (Ay-By)^2 then we go for geometric mean 
+would wusing the average works 
 
 
+now for 2d we have n points sum (X-xi + Y-yi)
+
+in 2d take independent median of x axis and y axis 
+
+median of all x and median of all y
+
+
+there are Q queries
+in each query you will have X
+find out 
+
+... x1. ..... x2....x3....x4...x5.....
+sum from 1 to N |X-xi|
+ 
+========================================================================================
 #include<bits/stdc++.h>
 #define int long long 
 using namespace std;
