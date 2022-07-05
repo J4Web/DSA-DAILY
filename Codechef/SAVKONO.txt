@@ -1,0 +1,43 @@
+//CodeChef
+//SAVKONO
+
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+
+int32_t main() {
+
+	int t;
+	cin>>t;
+	
+	while(t--)
+	{
+	    int n,z; cin>>n>>z;
+	    priority_queue<int> q;
+	    for(int i=0;i<n;i++)
+	    {
+	        int x; cin>>x;
+	        q.push(x);
+	    }
+	    int ans=0;
+	    while(q.size()>0)
+	    {
+	        ans++;
+	        auto st=q.top();
+	        z-=st;
+	        q.pop();
+	        if(st/2) q.push(st/2);
+	        if(z<0) break;
+	    }
+	    if(z<=0){
+	        cout<<ans<<"\n";
+	        
+	    }
+	    else{
+	        cout<<"Evacuate"<<"\n";
+	    }
+	    
+	}
+	
+	return 0;
+}
