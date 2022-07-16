@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+#define int long long int
+#define ld long double
+#define all(c) c.begin(),c.end()
+#define lb lower_bound
+#define ub upper_bound
+#define mp(a,b) make_pair(a,b)
+#define pb(c) push_back(c)
+#define mod 1000000007
+#define NITRO ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+ 
+using namespace std;
+ 
+void code()
+{
+    /*Start your code here Sachin*/
+    int n; cin>>n;
+    vector<int> arr(n);
+    for(auto &i:arr) cin>>i;
+    unordered_set<int> st;
+    for(int i=n-1;i>=1;i--)
+    {
+    	arr[i]=arr[i]%arr[i-1];
+    	if(arr[i]%arr[0]!=0)
+    	{
+    		cout<<"NO\n";
+    		return ;
+    	}
+    }
+    cout<<"YES";
+    cout<<"\n";
+}
+ 
+int32_t main()
+{
+    /*freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);*/
+ 
+	NITRO
+	int t=1;
+	cin>>t;
+    while(t--)
+    {
+        code();
+    }
+    return 0;
+}
