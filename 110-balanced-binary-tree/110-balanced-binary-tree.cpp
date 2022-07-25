@@ -21,7 +21,6 @@ public:
     }
     bool isBalanced(TreeNode* root) {
         if(root==nullptr) return true;
-        if(root && !(root->left) && !(root->right)) return true;
         int lh=ht(root->left);
         int rh=ht(root->right);
         if(abs(lh-rh)>1) return false;
