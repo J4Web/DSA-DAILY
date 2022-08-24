@@ -8,7 +8,6 @@ public:
             if(s[i]=='(' || s[i]=='{' || s[i]=='[')
             {
                 st.push(s[i]);
-                ++i;
             }
             else{
                 if(st.size()==0)
@@ -18,22 +17,23 @@ public:
                 if(s[i]==')' && st.top()=='(')
                 {
                     st.pop();
-                    ++i;
+                
                 }
                 else if(s[i]=='}' && st.top()=='{')
                 {
                     st.pop();
-                    ++i;
+                
                 }
                 else if(s[i]==']' && st.top()=='[')
                 {
                      st.pop();
-                    ++i;
+                
                 }
                 else {
                     return false;
                 }
             }
+             i++;
         }
         if(st.size()==0)
         {
