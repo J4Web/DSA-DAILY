@@ -3,7 +3,7 @@ public:
     bool reorderedPowerOf2(int n) {
         string number = sortedDigits(n);
 
-        for (int i = 0; i < 30; ++i) {
+        for (int i = 0; i < 31; ++i) {
             string powerOfTwo = sortedDigits(1 << i);
             if (number == powerOfTwo)
                 return true;
