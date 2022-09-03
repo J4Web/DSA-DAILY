@@ -39,19 +39,17 @@ public:
                 
                 if(st.size()==0) 
                 {
-                    cout<<"ewrftghjk";
                     break;
                 }
                  st.push_front(NULL);
             }
              if(temp && temp->left) 
             {
-                 cout<<"asdfghj"<<"\n";
                 st.push_front(temp->left);
             }
             if(temp && temp->right)
             {
-                cout<<"right"<<"\n";
+         
                 st.push_front(temp->right); 
     
             }
