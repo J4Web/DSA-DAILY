@@ -1,28 +1,26 @@
 class Solution {
 public:
     string reverseWords(string s) {
+        s.push_back(' ');
+        stack<char> st;
         string res="";
-        string temp="";
-         s.push_back(' ');
         for(int i=0;i<s.size();++i)
         {
-           
-            if(s[i]==' ')
-            {
-                res+=" ";
-            }
             if(s[i]!=' ')
             {
-                temp=s[i]+temp;
+                st.push(s[i]);
             }
-
             else{
-                res+=temp;
-                temp="";
+                while(st.size()!=0)
+                {
+                    res+=st.top();
+                    st.pop();
+                }
+                res+=' ';
             }
-            
         }
+        res.pop_back();
+        return res;
         
-        return res.substr(1,res.size());
     }
 };
