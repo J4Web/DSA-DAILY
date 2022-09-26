@@ -12,7 +12,7 @@ public:
                 idx=i+1;break;
             }
         }
-        if(idx==-1 || idx==nums.size()) return true;
+        if(idx==-1 ) return true;
         cout<<"idx:"<<idx<<"\n";
         bool res1=true;
         for(int i=0;i<idx-1;++i)
