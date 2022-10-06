@@ -1,33 +1,22 @@
 class Solution {
 public:
-    int trap(vector<int>& height) {
-        int l=0;
-        int r=height.size()-1;
-        int res=0;
-        int leftmax=0;
-        int rightmax=0;
-        while(l<=r)
-        {
-            if(height[l]<=height[r])
-            {
-                    if(height[l]>= leftmax)
-                {
-                    leftmax=height[l];
-                }
-                else 
-                    {
-                        res+=leftmax-height[l];
-                    }
-                l++;
-            }
-            else
-            {
-                if(height[r]>=rightmax) rightmax=height[r];
-                else res+=rightmax-height[r];
-                r--;
-            }
-        }
-        return res;
+    int trap(vector<int>& A) {
+        int N=A.size();
+        int ans=0;
+        vector<int> left(N, 0), right(N, 0);
         
+        for(int i = 1; i < N; i++) {
+            left[i] = max(left[i - 1], A[i - 1]);
+        }
+        
+        for(int i = N - 2; i >= 0; i--) {
+            right[i] = max(right[i + 1], A[i + 1]);
+        }
+        
+        for(int i = 1; i < N - 1; i++) {
+            ans += max(0, min(left[i], right[i]) - A[i]);
+        }
+        
+        return ans;
     }
 };
