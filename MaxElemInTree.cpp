@@ -1,5 +1,4 @@
 #include<bits/stdc++.h>
-#define e endl;
 using namespace std;
 template<typename T>
 
