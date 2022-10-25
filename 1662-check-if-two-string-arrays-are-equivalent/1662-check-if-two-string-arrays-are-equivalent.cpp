@@ -9,10 +9,6 @@ public:
         for(auto i:word2){
             res2+=i;
         }
-        
-        // sort(res1.begin(),res1.end());
-        // sort(res2.begin(),res2.end());
-        cout<<res1<<" "<<res2<<"\n";
         if(res1!=res2) return false;
         return true;
     }
