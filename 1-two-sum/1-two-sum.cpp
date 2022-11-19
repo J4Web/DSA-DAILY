@@ -1,6 +1,7 @@
 //Better solution
 //recent solution
 //slacking off
+//Slacking off
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
