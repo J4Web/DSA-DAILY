@@ -4,7 +4,6 @@ public:
         
       long long MOD=1e9+7;
         int n = arr.size();
-        
         vector<int> left(n,-1), right(n,n);
         // for every i find the Next smaller element to left and right
         
