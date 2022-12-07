@@ -15,11 +15,13 @@ public:
     {
         if(root==nullptr) return;
         int v=root->val;
+
         if( (v-low)>=0 and (v-high)<=0 ) 
         {
             cout<<"its the ran node "<<v<<"\n";
             sum+=v;
         }
+        else if( (v-low)<0 and (v-high)>0 ) return ;
         getSum(root->left,low,high,sum);
         getSum(root->right,low,high,sum);
         
