@@ -9,7 +9,8 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-//rest day to accumulate 
+//rest day to accumulate
+//today was just a lazy day need a plan but have to have to do 2 questions
 class Solution {
 public:
     vector<vector<int>> levelOrder(TreeNode* root) {
