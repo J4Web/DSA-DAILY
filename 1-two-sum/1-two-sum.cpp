@@ -22,6 +22,7 @@
 //slacking off
 //slacking off
 //slacking off
+//rest day
 //slacking off
 //work
 //slacking off
