@@ -27,6 +27,7 @@
 //work
 //slacking off
 //off day
+//exam day
 
 class Solution {
 public:
