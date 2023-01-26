@@ -1,41 +1,4 @@
 //Better solution
-//bug of mdebikri
-//asdfghjk
-//slacking off
-//office day
-//fustrting day
-//slacking off
-//need to fix my time-table
-//resigning day
-//recent solution
-//dfghjk
-//exam day1
-//slacking off
-//slacking off
-//fghjkl
-//Slacking off
-//last exam night
-//slacking off
-//slacking off
-//slacking off
-//slacking off
-//slacking off
-//slacking off
-//slacking off
-//slacking off
-//slacking off
-//slacking off
-//slacking off
-//random cmt
-//slacking off
-//slacking off
-//rest day
-//slacking off
-//work
-//slacking off
-//off day
-//exam day
-//exam day
 
 class Solution {
 public:
