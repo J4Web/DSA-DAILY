@@ -8,7 +8,7 @@ public:
         int l=0;
         vector<pair<int,int>> arr;
         for(auto i=0;i<n;i++)
-        {
+        { //
             arr.push_back({nums[i],i});
         }
          sort(arr.begin(),arr.end());
