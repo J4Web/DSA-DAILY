@@ -1,6 +1,6 @@
 //Better solution //
 class Solution {
-public: //
+public: 
     vector<int> twoSum(vector<int>& nums, int target) {
         int n=nums.size();
         vector<int> res;
