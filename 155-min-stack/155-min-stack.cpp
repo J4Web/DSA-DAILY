@@ -1,33 +1,31 @@
 class MinStack {
+    stack<int> minStack;
+    stack<int> st;
+    
 public:
-    map<int,int> mp;
-    deque<int> dq;
     MinStack() {
         
     }
+    
     void push(int val) {
-        mp[val]++;
-        dq.push_back(val);
+        st.push(val);
+        if(minStack.size()==0 || val<=minStack.top())
+        {
+            minStack.push(val);
+        }
     }
     
     void pop() {
-        if(mp.find(dq.back())!=mp.end()){
-            mp[dq.back()]--;
-            if(mp[dq.back()]==0){
-                mp.erase(dq.back());
-            }
-        }
-        dq.pop_back();
-        
+        if(st.top()==minStack.top()) minStack.pop();
+         st.pop();
     }
     
     int top() {
-        return dq.back();
+         return st.top();
     }
     
     int getMin() {
-        int min=(mp.begin()->first);
-        return min;
+         return minStack.top();
     }
 };
 
