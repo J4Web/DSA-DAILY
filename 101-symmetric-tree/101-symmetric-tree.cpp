@@ -13,14 +13,14 @@ class Solution {
 public:
     bool isSymmetric(TreeNode* root) {
         if(!root) return false;
-        return isSym(root->left,root->right);
-        
+        return helper(root->left,root->right);
     }
-    bool isSym(TreeNode* lft,TreeNode* rgt)
+    bool helper(TreeNode* lft,TreeNode* rgt)
     {
         if(!lft and !rgt) return true;
         if(!lft || !rgt) return false;
         if(lft->val!=rgt->val) return false;
-        return isSym(lft->left,rgt->right) and isSym(lft->right,rgt->left);
+        return helper(lft->left,rgt->right) and helper(lft->right,rgt->left);
     }
 };
+
