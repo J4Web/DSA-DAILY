@@ -1,6 +1,8 @@
 class Solution {
 public:
+//for each loop 
     string removeDuplicates(string s) {
+        
             // use string here instead of Stack<char>
         // so that we don't need to build the final string again
         string ans;
