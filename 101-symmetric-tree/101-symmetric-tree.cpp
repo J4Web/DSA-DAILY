@@ -9,6 +9,7 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+//symmetric tree
 class Solution {
 public:
     bool isSymmetric(TreeNode* root) {
