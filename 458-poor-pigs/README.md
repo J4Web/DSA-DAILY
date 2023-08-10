@@ -1,6 +1,6 @@
 <h2><a href="https://leetcode.com/problems/poor-pigs/">458. Poor Pigs</a></h2><h3>Hard</h3><hr><div><p>There are <code>buckets</code> buckets of liquid, where <strong>exactly one</strong> of the buckets is poisonous. To figure out which one is poisonous, you feed some number of (poor) pigs the liquid to see whether they will die or not. Unfortunately, you only have <code>minutesToTest</code> minutes to determine which bucket is poisonous.</p>
 
-<p>You can feed the pigs according to these steps:</p>
+<p>You can feed the pig according to these steps:</p>
 
 <ol>
 	<li>Choose some live pigs to feed.</li>
