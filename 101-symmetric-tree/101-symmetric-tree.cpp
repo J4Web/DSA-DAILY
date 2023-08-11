@@ -10,6 +10,7 @@
  * };
  */
 //symmetric tree
+//tree question
 class Solution {
 public:
     bool isSymmetric(TreeNode* root) {
