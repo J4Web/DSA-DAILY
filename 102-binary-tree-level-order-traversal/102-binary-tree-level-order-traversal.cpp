@@ -9,6 +9,7 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+//tree updated code
 //rest day to accumulate
 //today was just a lazy day need a plan but have to have to do 2 questions
 class Solution {
